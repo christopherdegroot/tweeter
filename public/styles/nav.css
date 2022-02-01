@@ -4,12 +4,28 @@
   color: #FFFFFF;
 
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
+  align-items: row;
+  justify-content: center;
   padding-left: 1.5em;
   padding-right: 1.5em;
 }
 
+
+.tweetbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: right;
+}
+
+.arrows {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 3em;
+}
+
 #tweeter {
- 
+  font-family: 'Source Sans Pro', sans-serif;
 }
