@@ -1,7 +1,8 @@
-.header {
+.nav {
   height: 120px;
   background-color: #4056A1;
   color: #FFFFFF;
+  position: absolute;
 
   display: flex;
   flex-direction: column;
@@ -19,12 +20,14 @@
   justify-content: right;
 }
 
+
 .arrows {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-right: 3em;
 }
+
 
 #tweeter {
   font-family: 'Source Sans Pro', sans-serif;
