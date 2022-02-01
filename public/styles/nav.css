@@ -1,0 +1,15 @@
+.header {
+  height: 120px;
+  background-color: #4056A1;
+  color: #FFFFFF;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}
+
+#tweeter {
+ 
+}
