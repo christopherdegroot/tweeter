@@ -1,4 +1,5 @@
 
+
 $(document).ready(function() {
 
   // grabbing text element
@@ -17,7 +18,7 @@ $(document).ready(function() {
     if (140 - $textLength < 0) {
       $counter.attr("id", "container2")
     }
-    if (140 - $textLength > 0) {
+    if (140 - $textLength >= 0) {
       $counter.attr("id", "container3")
     }
   });
