@@ -30,6 +30,7 @@ body {
 
  main {
    display: flex;
+   flex-direction: column;
    margin-right: 5%;
    margin-left: 5%;
    align-items: center;
@@ -37,3 +38,4 @@ body {
    
    background-color: #f4f1ec;
  }
+
