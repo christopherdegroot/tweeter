@@ -1,5 +1,6 @@
 
 
+
 $(document).ready(function() {
 
   // grabbing text element
@@ -9,9 +10,18 @@ $(document).ready(function() {
   $text.on('input', function() {
 
     // grabbing text length within textbox, grabbing counter element from DOM tree, reassigning value of the counter element to text length
-    $textLength =  $(this).val().length
-    $counter = $($(this).parent()[0][2]);
-     $counter.val(140 - $textLength)
+    $textLength =  $(this).val().length;
 
+    $counter = $($(this).parent()[0][2]);
+    $counter.val(140 - $textLength);
+
+    // adding if statements to control the colour if the counter is currently above or below 0 (if below, red)
+    if (140 - $textLength < 0) {
+      $counter.css("color", "red");
+    }
+    if (140 - $textLength > 0) {
+      $counter.css("color", "#545149");
+    }
   });
+
 });
