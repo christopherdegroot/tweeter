@@ -1,8 +1,10 @@
 .nav {
   height: 120px;
+  width: 100%;
   background-color: #4056A1;
   color: #FFFFFF;
-  position: absolute;
+  position: fixed;
+  top: 0;
 
   display: flex;
   flex-direction: column;
