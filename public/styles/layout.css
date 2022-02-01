@@ -28,4 +28,12 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
  }
 
- 
+ main {
+   display: flex;
+   margin-right: 5%;
+   margin-left: 5%;
+   align-items: center;
+   justify-content: center;
+   
+   background-color: #f4f1ec;
+ }
