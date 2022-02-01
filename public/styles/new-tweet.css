@@ -58,3 +58,13 @@ label {
   display: flex;
   flex-direction: column;
 }
+
+/* id to update counter to red if below 0 */
+#container2 {
+  color: red;
+}
+
+ /* id to reset counter if above 0 */
+#container3 {
+  color: #545149;
+}
