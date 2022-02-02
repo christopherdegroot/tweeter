@@ -54,5 +54,9 @@ article {
 }
 
 .box-shadow {
-  box-shadow: 10px 10px 5px #aaaaaa;
+  box-shadow: 5px 5px 2px #afb0dbaf;
+}
+
+.tweets article footer div i {
+  color: rgb(60, 40, 114);
 }
