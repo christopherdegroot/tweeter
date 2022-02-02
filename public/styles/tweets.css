@@ -60,3 +60,7 @@ article {
 .tweets article footer div i {
   color: rgb(60, 40, 114);
 }
+
+.tweets article footer div i.tweet-text-color {
+  color: rgb(114, 114, 45);
+}
