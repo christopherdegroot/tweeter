@@ -1,6 +1,8 @@
 .tweets {
   width: 90%;
 }
+
+
 article {
   display: flex;
   flex-direction: column;
@@ -36,6 +38,7 @@ article {
   padding-left: 2em;
   padding-right: 2em;
   font-size: 16px;
+  
 }
 
 .tweets .tweet-text {
@@ -48,4 +51,8 @@ article {
   padding-left: 0.5em;
   font-weight: 600;
   font-size: 20px;
+}
+
+.box-shadow {
+  box-shadow: 10px 10px 5px #aaaaaa;
 }
