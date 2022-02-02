@@ -12,11 +12,10 @@ article {
 
 .tweets article header {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  padding-left: 1em;
-  padding-right: 1em;
+  padding: 0 1.5em;
 }
+
 .tweets article header p {
   display: flex;
   justify-content: center;
@@ -35,16 +34,13 @@ article {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 2em;
-  padding-right: 2em;
+  padding:0 2em;
   font-size: 16px;
-  
 }
 
 .tweets .tweet-text {
   border-bottom: 3.5px solid black;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin: 0 20px;
 }
 
 .tweets .tweet-text p {
@@ -58,9 +54,9 @@ article {
 }
 
 .tweets article footer div i {
-  color: rgb(60, 40, 114);
+  color: #51369c;
 }
 
 .tweets article footer div i.tweet-text-color {
-  color: rgb(114, 114, 45);
+  color: #819C36;
 }
