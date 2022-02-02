@@ -42,35 +42,22 @@
 
   <body>
     <!-- Top nav bar (fixed) -->
-    <nav class="nav">
-      <div class="tweetbar">
-      
-      <div id="tweeter">
-      <span style="font-weight: 600;">Write</span>
-      <span>a new tweet</span>
-    </div>
-      </div>
-      <div class="arrows">
-        <span style="font-size: 36px; font-family: 'Bungee', cursive;">tweeter</span>
-        <i style="font-size: 24px" class="fas fa-angle-double-down"></i>
-      </div>
+    <nav>
+      <span>tweeter</span>
+      <div class="right-side">
+        <span><strong>Write</strong> a new tweet</span>
+        <i class="fas fa-angle-double-down"></i>
+      </div> 
     </nav>
-
     <header class="header">
-      <div>
-          <img src="/images/profile-hex.png"> 
-      </div>
-    
-      <div>
-          <h2><b>Chris</b> De Groot</h2>
-      </div>
-  </header>
+      <img src="/images/profile-hex.png"> 
+      <h2><b>Chris</b> De Groot</h2>
+    </header>
     
 
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-        <h2></h2>
         <form action="/tweets/" method="POST">
           <label for="tweet-text"><b>What are you humming about?</b></label>
           <textarea name="text" id="tweet-text"></textarea>
