@@ -43,6 +43,7 @@ article {
 .tweets .tweet-text {
   border-bottom: 3.5px solid black;
   margin: 0 20px;
+  overflow-wrap: break-word;
 }
 
 .tweets .tweet-text p {
@@ -62,3 +63,5 @@ article {
 .tweets article footer div i.tweet-text-color {
   color: #819C36;
 }
+
+
