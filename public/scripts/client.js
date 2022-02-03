@@ -82,15 +82,19 @@ $(document).ready( function() {
  
      event.preventDefault()
      const data = $(this).serialize();
-  
+     const inputLength = (data.length - 5)
+     const $inputLength = $('#tweet-text').val().length
+     console.log(data)
 
-      if(data.length-5 > 140) {
-        renderError('Tweet too long!')
-        $('.error').slideDown()
-        return;
+    
+     
+     if($inputLength > 140) {
+       renderError('Tweet too long!')
+       $('.error').slideDown()
+       return;
       }
 
-      if (data.length-5 === 0) {
+      if ($inputLength === 0) {
         renderError('Tweet empty!')
         $('.error').slideDown()
         return;
