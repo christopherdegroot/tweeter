@@ -53,8 +53,6 @@ $(document).ready( function() {
   };
 
   
-
-  
   const $form = $('form')
   
    $form.submit( function(event) {
@@ -62,7 +60,18 @@ $(document).ready( function() {
      console.log('pressed!')
      event.preventDefault()
      const data = $(this).serialize();
-    
+      console.log(data);
+      console.log('logging data.length', data.length -5)
+
+      if(data.length-5 > 140) {
+        alert('Tweet too long!')
+        return;
+      }
+
+      if (data.length-5 === 0) {
+        alert('Please enter a tweet!')
+        return;
+      }
 
      $.ajax({
        method: 'POST',
@@ -74,12 +83,6 @@ $(document).ready( function() {
        $('output').val('140').attr("id", "container3");
        renderTweets();
      });
-
-
-
-
    })
-
-
 
 });
