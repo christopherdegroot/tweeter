@@ -8,7 +8,7 @@ $(document).ready( function() {
 
   const createTweetElement = function(tweetData) {
     const $tweetSection = $('.tweets');
-    console.log('logging tweetData', tweetData)
+    //console.log('logging tweetData', tweetData)
 
     return `<article>
     <header>
@@ -43,7 +43,7 @@ $(document).ready( function() {
       success: (tweets) => {
         $tweetSection.empty();
         for (const tweet in tweets) {
-          console.log('logging tweet and tweets in for loop', tweet, tweets);
+          //console.log('logging tweet and tweets in for loop', tweet, tweets);
           const $tweet = createTweetElement(tweets[tweet]);
           $tweetSection.append($tweet);
         }
@@ -52,6 +52,34 @@ $(document).ready( function() {
 
   };
 
-  renderTweets();
+  
+
+  
+  const $form = $('form')
+  
+   $form.submit( function(event) {
+
+     console.log('pressed!')
+     event.preventDefault()
+     const data = $(this).serialize();
+    
+
+     $.ajax({
+       method: 'POST',
+       url: '/tweets',
+       data: data
+     }).then(()=>{
+       console.log('Tweet created Successfully');
+       $('#tweet-text').val('').focus();
+       $('output').val('140').attr("id", "container3");
+       renderTweets();
+     });
+
+
+
+
+   })
+
+
 
 });
