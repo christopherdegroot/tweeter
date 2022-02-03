@@ -84,9 +84,6 @@ $(document).ready( function() {
      const data = $(this).serialize();
      const inputLength = (data.length - 5)
      const $inputLength = $('#tweet-text').val().length
-     console.log(data)
-
-    
      
      if($inputLength > 140) {
        renderError('Tweet too long!')
