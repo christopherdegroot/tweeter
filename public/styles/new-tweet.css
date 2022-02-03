@@ -69,3 +69,27 @@ label {
 #container3 {
   color: #545149;
 }
+
+
+
+.error {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: #fce4e46e;
+  border: 3px solid #fcc2c3;
+  border-radius: 5px;
+  color: red;
+  font-weight: 300;
+  padding: 20px 30px;
+  height: 2.5em;
+  width: auto;
+}
+
+.error-img {
+  height: 40px;
+  width: 40px;
+}
