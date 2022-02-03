@@ -4,35 +4,50 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+
+
+
+// make sure all scripts below execute AFTER document has finished loading
 $(document).ready( function() {
 
+
+  // function to create a new tweet element ----------------------------------------------------------------
   const createTweetElement = function(tweetData) {
     const $tweetSection = $('.tweets');
-    //console.log('logging tweetData', tweetData)
+    
+    // escape function to ensure no XSS is possible
+    const escape = function (str) {
+      let div = document.createElement("div");
+      div.appendChild(document.createTextNode(str));
+      return div.innerHTML;
+    };
 
-    return `<article>
-    <header>
-      <p> <img style="padding-right: 10px" src="${tweetData.user.avatars}"> ${tweetData.user.name}</p>
-      <p style="color: #acc5c9; font-weight: 600;">${tweetData.user.handle}</p>
-    </header>
-    <div class="tweet-text">
-      <p>${tweetData.content.text}</p>
-    </div>
-    <footer>
-      <p><b>${timeago.format(tweetData.created_at)}</b></p>
-      <div>  
-        <i class="fas fa-flag"></i>
-        <i class="fas fa-retweet"></i>
-        <i class="fas fa-heart"></i> 
+    //Setting the HTML for new tweets, with template literal strings for relevant data points
+    const newTweetHTML = 
+    `<article>
+      <header>
+        <p> <img style="padding-right: 10px" src="${escape(tweetData.user.avatars)}"> ${escape(tweetData.user.name)}</p>
+        <p style="color: #acc5c9; font-weight: 600;">${escape(tweetData.user.handle)}</p>
+      </header>
+      <div class="tweet-text">
+        <p>${escape(tweetData.content.text)}</p>
       </div>
-    </footer>
-  </article>`
+      <footer>
+        <p><b>${timeago.format(escape(tweetData.created_at))}</b></p>
+        <div>  
+          <i class="fas fa-flag"></i>
+          <i class="fas fa-retweet"></i>
+          <i class="fas fa-heart"></i> 
+        </div>
+      </footer>
+    </article>`
+
+      return newTweetHTML
   };
 
-  // const $tweet = createTweetElement(tweetData)
-  // $tweetSection.append($tweet);
 
 
+// function to render all tweets ----------------------------------------------------------------------
   const renderTweets = function() {
     const $tweetSection = $('.tweets');
    
@@ -43,46 +58,62 @@ $(document).ready( function() {
       success: (tweets) => {
         $tweetSection.empty();
         for (const tweet in tweets) {
-          //console.log('logging tweet and tweets in for loop', tweet, tweets);
           const $tweet = createTweetElement(tweets[tweet]);
           $tweetSection.append($tweet);
         }
       }
     })
-
   };
 
+  const renderError = function(string) {
+    const $errorSection = $('.new-tweet');
+    $errorSection.prepend(`<label class="error"><img class="error-img" src="https://cdn-icons.flaticon.com/png/512/4201/premium/4201973.png?token=exp=1643858307~hmac=c8125c2eaf58a584d271318dccc53234">
+    ${string}
+  </label>`)
+  };
   
-  const $form = $('form')
-  
-   $form.submit( function(event) {
 
-     console.log('pressed!')
+  renderTweets();
+  const $form = $('form')
+
+
+   $form.submit( function(event) {
+    $('.error').remove()
+ 
      event.preventDefault()
      const data = $(this).serialize();
-      console.log(data);
-      console.log('logging data.length', data.length -5)
+  
 
       if(data.length-5 > 140) {
-        alert('Tweet too long!')
+        renderError('Tweet too long!')
+        $('.error').slideDown()
         return;
       }
 
       if (data.length-5 === 0) {
-        alert('Please enter a tweet!')
+        renderError('Tweet empty!')
+        $('.error').slideDown()
         return;
       }
+
+      
 
      $.ajax({
        method: 'POST',
        url: '/tweets',
        data: data
      }).then(()=>{
-       console.log('Tweet created Successfully');
+
+       
+       $('.error').slideUp()
+       setTimeout(() => {
+        $('.error').remove()
+       }, 401);
+
        $('#tweet-text').val('').focus();
        $('output').val('140').attr("id", "container3");
+    
        renderTweets();
      });
    })
-
 });
