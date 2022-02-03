@@ -2,12 +2,12 @@
   width: 90%;
 }
 
-
 article {
   display: flex;
   flex-direction: column;
   width: 100%;
   border-style: solid;
+  margin-bottom: 20px;
 }
 
 .tweets article header {
@@ -50,7 +50,7 @@ article {
 }
 
 .box-shadow {
-  box-shadow: 5px 5px 2px #afb0dbaf;
+    box-shadow: 5px 5px 2px #afb0dbaf;
 }
 
 .tweets article footer div i {
