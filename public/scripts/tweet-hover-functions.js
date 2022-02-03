@@ -7,7 +7,6 @@
   
   
     $tweetContainer.on('mouseenter', function() {
-      console.log('im bein hovered on')
       $(this).addClass("box-shadow")
     });
     
