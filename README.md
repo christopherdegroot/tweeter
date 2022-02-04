@@ -7,16 +7,14 @@ This repository is the starter code for the project: Students will fork and clon
 ## Final Product
 
 Clean UI - Easy Navigation to Manage Your Links
-!["Clean UI - Easy Navigation to Manage Your Links"](https://github.com/christopherdegroot/tinyapp/blob/master/docs/Clean%20UI%20-%20Easy%20Navigation%20to%20Manage%20Your%20Links.PNG?raw=true)
+!["Desktop version of website"](https://github.com/christopherdegroot/tweeter/blob/master/docs/Desktop.PNG)
 
 Error Handling - With Redirection to Login & Registration
-!["Error Handling - With Redirection to Login & Registration"](https://github.com/christopherdegroot/tinyapp/blob/master/docs/Error%20Handling%20-%20With%20Redirection%20to%20%20Login%20&%20Registration.PNG?raw=true)
+!["Error Handling - Tweets that are too long or empty are flagged for the user - Character counter also helps know how many characters you are at, or over the limit"](https://github.com/christopherdegroot/tweeter/blob/master/docs/ErrorHandling.PNG)
 
 Privacy - Disallowing Access to Other Users' Links
-!["Privacy - Disallowing Access to Other Users' Links"](https://github.com/christopherdegroot/tinyapp/blob/master/docs/Privacy%20-%20Disallowing%20Access%20to%20Other%20Users'%20Links.PNG?raw=true)
+!["Mobile Version"](https://github.com/christopherdegroot/tweeter/blob/master/docs/Mobile.PNG)
 
-Registration Page
-!["Registration Page"](https://github.com/christopherdegroot/tinyapp/blob/master/docs/User%20Inputs%20-%20Registration%20Page.PNG?raw=true)
 
 ## Getting Started
 
