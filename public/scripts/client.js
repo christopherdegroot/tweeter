@@ -6,22 +6,22 @@
 
 
 // make sure all scripts below execute AFTER document has finished loading
-$(document).ready( function() {
+$(document).ready(function() {
 
 
   // function to create a new tweet element --------------------------------------------------------------------------------------------------------------------------------
   const createTweetElement = function(tweetData) {
     const $tweetSection = $('.tweets');
-    
+      
     // escape function to ensure no XSS is possible
-    const escape = function (str) {
+    const escape = function(str) {
       let div = document.createElement("div");
       div.appendChild(document.createTextNode(str));
       return div.innerHTML;
     };
 
     //Setting the HTML for new tweets, with template literal strings for relevant data points ----------------------------------------------------------------------------------
-    const newTweetHTML = 
+    const newTweetHTML =
     `<article>
       <header>
         <p> <img style="padding-right: 10px" src="${escape(tweetData.user.avatars)}"> ${escape(tweetData.user.name)}</p>
@@ -38,18 +38,17 @@ $(document).ready( function() {
           <i class="fas fa-heart"></i> 
         </div>
       </footer>
-    </article>`
+    </article>`;
 
     //calling createNewTweet returns new tweet HTML
-      return newTweetHTML
+    return newTweetHTML;
   };
 
 
 
-// function to render all tweets ------------------------------------------------------------------------------------------------------------------------------------------------
+  // function to render all tweets ------------------------------------------------------------------------------------------------------------------------------------------------
   const renderTweets = function() {
     const $tweetSection = $('.tweets');
-   
 
     $.ajax({
       url: '/tweets',
@@ -61,7 +60,7 @@ $(document).ready( function() {
           $tweetSection.append($tweet);
         }
       }
-    })
+    });
   };
 
   // function to render an error message to the DOM if the form submmission is either empty, or above 140 characters in length
@@ -71,65 +70,63 @@ $(document).ready( function() {
     const $errorSection = $('.new-tweet');
 
     // placing error message HTML in desired location in DOM
-    $errorSection.prepend(`<label class="error"><img class="error-img" src="https://cdn-icons.flaticon.com/png/512/4201/premium/4201973.png?token=exp=1643858307~hmac=c8125c2eaf58a584d271318dccc53234">
-    ${string}
-  </label>`)
+    $errorSection.prepend(`<label class="error"><img class="error-img" src="https://cdn-icons.flaticon.com/png/512/4201/premium/4201973.png?token=exp=1643858307~hmac=c8125c2eaf58a584d271318dccc53234">${string}</label>`);
   };
   
   // call renderTweets to ensure current page is populated with current database of tweets
   renderTweets();
 
   // grabbing form input
-  const $form = $('form')
+  const $form = $('form');
 
   // function executes on form submission
-   $form.submit( function(event) {
-    $('.error').remove()
+  $form.submit(function(event) {
+    $('.error').remove();
  
     // preventing default request to go to a new page
-     event.preventDefault()
+    event.preventDefault();
 
-     // declaring data(to use in Ajax request) and grabbing input length of form (for error messages)
-     const data = $(this).serialize();
-     const $inputLength = $('textarea').val().length
+    // declaring data(to use in Ajax request) and grabbing input length of form (for error messages)
+    const data = $(this).serialize();
+    const $inputLength = $('textarea').val().length;
      
 
-     // error handling for tweet greater than 140 char
-     if($inputLength > 140) {
-       renderError('Tweet too long!')
-       $('.error').slideDown()
-       return;
-      }
+    // error handling for tweet greater than 140 char
+    if ($inputLength > 140) {
+      renderError('Tweet too long!');
+      $('.error').slideDown();
+      return;
+    }
 
-      // error handling for empty tweet
-      if ($inputLength === 0) {
-        renderError('Tweet empty!')
-        $('.error').slideDown()
-        return;
-      }
+    // error handling for empty tweet
+    if ($inputLength === 0) {
+      renderError('Tweet empty!');
+      $('.error').slideDown();
+      return;
+    }
 
       
-      // starting ajax request
-     $.ajax({
-       method: 'POST',
-       url: '/tweets',
-       data: data
-     }).then(()=>{
+    // starting ajax request
+    $.ajax({
+      method: 'POST',
+      url: '/tweets',
+      data: data
+    }).then(()=>{
 
-       // error message will slide up after 401ms for smoother UX
-       $('.error').slideUp()
-       setTimeout(() => {
-        $('.error').remove()
-       }, 401);
+      // error message will slide up after 401ms for smoother UX
+      $('.error').slideUp();
+      setTimeout(() => {
+        $('.error').remove();
+      }, 401);
 
-       // resetting text input to nothing, and keeping focus inside
-       $('textarea').val('').focus();
+      // resetting text input to nothing, and keeping focus inside
+      $('textarea').val('').focus();
 
-       // resetting counter
-       $('output').val('140').attr("id", "container3");
+      // resetting counter
+      $('output').val('140').attr("id", "container3");
     
-       //rendering all tweets with newest tweet now appended to the database
-       renderTweets();
-     });
-   })
+      //rendering all tweets with newest tweet now appended to the database
+      renderTweets();
+    });
+  });
 });

@@ -16,10 +16,10 @@ $(document).ready(function() {
 
     // adding if statements to control the colour if the counter is currently above or below 0 (if below, red)
     if (140 - $textLength < 0) {
-      $counter.attr("id", "container2")
+      $counter.attr("id", "container2");
     }
     if (140 - $textLength >= 0) {
-      $counter.attr("id", "container3")
+      $counter.attr("id", "container3");
     }
   });
 });
