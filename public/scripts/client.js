@@ -78,22 +78,30 @@ $(document).ready( function() {
   
   // call renderTweets to ensure current page is populated with current database of tweets
   renderTweets();
+
+  // grabbing form input
   const $form = $('form')
 
+  // function executes on form submission
    $form.submit( function(event) {
     $('.error').remove()
  
+    // preventing default request to go to a new page
      event.preventDefault()
+
+     // declaring data(to use in Ajax request) and grabbing input length of form (for error messages)
      const data = $(this).serialize();
-     const inputLength = (data.length - 5)
      const $inputLength = $('textarea').val().length
      
+
+     // error handling for tweet greater than 140 char
      if($inputLength > 140) {
        renderError('Tweet too long!')
        $('.error').slideDown()
        return;
       }
 
+      // error handling for empty tweet
       if ($inputLength === 0) {
         renderError('Tweet empty!')
         $('.error').slideDown()
@@ -101,22 +109,26 @@ $(document).ready( function() {
       }
 
       
-
+      // starting ajax request
      $.ajax({
        method: 'POST',
        url: '/tweets',
        data: data
      }).then(()=>{
 
-       
+       // error message will slide up after 401ms for smoother UX
        $('.error').slideUp()
        setTimeout(() => {
         $('.error').remove()
        }, 401);
 
+       // resetting text input to nothing, and keeping focus inside
        $('textarea').val('').focus();
+
+       // resetting counter
        $('output').val('140').attr("id", "container3");
     
+       //rendering all tweets with newest tweet now appended to the database
        renderTweets();
      });
    })

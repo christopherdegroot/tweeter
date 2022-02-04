@@ -1,15 +1,14 @@
+/* css for header */
+
 .header {
   background-color: rgb(185, 145, 43);
   background-image: url(https://www.transparenttextures.com/patterns/cubes.png);
   height: 400px;
   width: 100%;
-
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  
   margin-top: 120px;
   padding-top: 1.5em;
   padding-bottom: 1.5em;
@@ -17,6 +16,7 @@
   padding-right: 1.5em;
 }
 
+/* text of header */
 .header h2 {
   color:#545149;
   font-weight: normal;

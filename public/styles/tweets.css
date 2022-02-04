@@ -1,9 +1,12 @@
+/* css for tweets container */
+
 .tweets {
   width: 90%;
   display: flex;
   flex-direction: column-reverse;
 }
 
+/* css for each individual tweet */
 article {
   display: flex;
   flex-direction: column;
@@ -52,14 +55,17 @@ article {
   font-size: 20px;
 }
 
+/* css for box shadow when enabled */
 .box-shadow {
     box-shadow: 5px 5px 2px #afb0dbaf;
 }
 
+/* css for icon colour when not hovered over */
 .tweets article footer div i {
   color: #51369c;
 }
 
+/* css for icon colour when hovered over */
 .tweets article footer div i.tweet-text-color {
   color: #819C36;
 }

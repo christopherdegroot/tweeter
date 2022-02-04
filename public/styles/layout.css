@@ -45,7 +45,7 @@ body {
 /* Desktop styles */
 @media only screen and (min-width: 1024px) {
 
-/* header CSS  */
+/* Desktop Header  */
 .header {
   background-color: rgb(185, 145, 43);
   background-image: url(https://www.transparenttextures.com/patterns/cubes.png);
@@ -63,6 +63,7 @@ body {
   padding-right: 1.5em;
 }
 
+/* Desktop Body */
 body {
   color: #545149;
   background-color: #f4f1ec;
@@ -72,6 +73,7 @@ body {
   margin-top: 120px;
 }
 
+/* Desktop tweet column */
  main {
    display: flex;
    flex-direction: column;

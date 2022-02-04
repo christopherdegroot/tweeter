@@ -14,9 +14,6 @@
       $(this).removeClass("box-shadow")
     });
   
-  
-  
-  
   // jQuery code for icon mouse-over to change color of individual icons
   const $tweetIcons = $('i')
   

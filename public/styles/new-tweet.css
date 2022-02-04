@@ -1,3 +1,5 @@
+/* CSS for new tweet box (includes the 'What are you humming about' text, form input, button, and counter */
+
 .new-tweet {
   display: flex;
   flex-direction: column;
@@ -24,6 +26,7 @@ button {
   margin-top: 1em;
 }
 
+/* character counter css */
 output{
   display: flex;
   align-items: center;
@@ -31,7 +34,6 @@ output{
   padding-right: 0;
   font-family: 'Bungee', cursive;
 }
-
 
 textarea {
   overflow: auto;
@@ -51,6 +53,7 @@ textarea {
   justify-content: space-between;
 }
 
+/* css for error messages that appear */
 label {
   display: flex;
   flex-direction: column;
@@ -66,6 +69,7 @@ label {
   color: #545149;
 }
 
+/* css for error message interior */
 .error {
   display: flex;
   justify-content: space-evenly;
@@ -84,6 +88,7 @@ label {
   width: auto;
 }
 
+/* adding error icon */
 .error-img {
   height: 40px;
   width: 40px;
