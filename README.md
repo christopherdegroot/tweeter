@@ -6,13 +6,13 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Final Product
 
-Clean UI - Easy Navigation to Manage Your Links
+Desktop version of website
 !["Desktop version of website"](https://github.com/christopherdegroot/tweeter/blob/master/docs/Desktop.PNG)
 
-Error Handling - With Redirection to Login & Registration
+Error Handling - Tweets that are too long or empty are flagged for the user - Character counter also helps know how many characters you are at, or over the limit
 !["Error Handling - Tweets that are too long or empty are flagged for the user - Character counter also helps know how many characters you are at, or over the limit"](https://github.com/christopherdegroot/tweeter/blob/master/docs/ErrorHandling.PNG)
 
-Privacy - Disallowing Access to Other Users' Links
+Mobile-ready, responsive design
 !["Mobile Version"](https://github.com/christopherdegroot/tweeter/blob/master/docs/Mobile.PNG)
 
 
