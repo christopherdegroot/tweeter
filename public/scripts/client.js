@@ -5,13 +5,11 @@
  */
 
 
-
-
 // make sure all scripts below execute AFTER document has finished loading
 $(document).ready( function() {
 
 
-  // function to create a new tweet element ----------------------------------------------------------------
+  // function to create a new tweet element --------------------------------------------------------------------------------------------------------------------------------
   const createTweetElement = function(tweetData) {
     const $tweetSection = $('.tweets');
     
@@ -22,14 +20,14 @@ $(document).ready( function() {
       return div.innerHTML;
     };
 
-    //Setting the HTML for new tweets, with template literal strings for relevant data points
+    //Setting the HTML for new tweets, with template literal strings for relevant data points ----------------------------------------------------------------------------------
     const newTweetHTML = 
     `<article>
       <header>
         <p> <img style="padding-right: 10px" src="${escape(tweetData.user.avatars)}"> ${escape(tweetData.user.name)}</p>
         <p style="color: #acc5c9; font-weight: 600;">${escape(tweetData.user.handle)}</p>
       </header>
-      <div class="tweet-text">
+      <div class="tweettext">
         <p>${escape(tweetData.content.text)}</p>
       </div>
       <footer>
@@ -42,12 +40,13 @@ $(document).ready( function() {
       </footer>
     </article>`
 
+    //calling createNewTweet returns new tweet HTML
       return newTweetHTML
   };
 
 
 
-// function to render all tweets ----------------------------------------------------------------------
+// function to render all tweets ------------------------------------------------------------------------------------------------------------------------------------------------
   const renderTweets = function() {
     const $tweetSection = $('.tweets');
    
@@ -65,17 +64,21 @@ $(document).ready( function() {
     })
   };
 
+  // function to render an error message to the DOM if the form submmission is either empty, or above 140 characters in length
   const renderError = function(string) {
+
+    // grabbing section where error will appear
     const $errorSection = $('.new-tweet');
+
+    // placing error message HTML in desired location in DOM
     $errorSection.prepend(`<label class="error"><img class="error-img" src="https://cdn-icons.flaticon.com/png/512/4201/premium/4201973.png?token=exp=1643858307~hmac=c8125c2eaf58a584d271318dccc53234">
     ${string}
   </label>`)
   };
   
-
+  // call renderTweets to ensure current page is populated with current database of tweets
   renderTweets();
   const $form = $('form')
-
 
    $form.submit( function(event) {
     $('.error').remove()
@@ -83,7 +86,7 @@ $(document).ready( function() {
      event.preventDefault()
      const data = $(this).serialize();
      const inputLength = (data.length - 5)
-     const $inputLength = $('#tweet-text').val().length
+     const $inputLength = $('textarea').val().length
      
      if($inputLength > 140) {
        renderError('Tweet too long!')
@@ -111,7 +114,7 @@ $(document).ready( function() {
         $('.error').remove()
        }, 401);
 
-       $('#tweet-text').val('').focus();
+       $('textarea').val('').focus();
        $('output').val('140').attr("id", "container3");
     
        renderTweets();

@@ -40,13 +40,13 @@ article {
   font-size: 16px;
 }
 
-.tweets .tweet-text {
+.tweets .tweettext {
   border-bottom: 3.5px solid black;
   margin: 0 20px;
   overflow-wrap: break-word;
 }
 
-.tweets .tweet-text p {
+.tweets .tweettext p {
   padding-left: 0.5em;
   font-weight: 600;
   font-size: 20px;
@@ -63,5 +63,3 @@ article {
 .tweets article footer div i.tweet-text-color {
   color: #819C36;
 }
-
-

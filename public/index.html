@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -42,9 +43,13 @@
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
     <script type="text/javascript" src="/scripts/tweet-hover-functions.js"></script>
+
   </head>
 
+
+  <!-- Beginning of page HTML -->
   <body>
+
     <!-- Top nav bar (fixed) -->
     <nav>
       <span>tweeter</span>
@@ -57,14 +62,13 @@
       <img src="/images/profile-hex2.png"> 
       <h2><b>Chris</b> De Groot</h2>
     </header>
-    
 
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
         <form action="/tweets/" method="POST">
           <label for="tweet-text"><b>What are you humming about?</b></label>
-          <textarea name="text" id="tweet-text"></textarea>
+          <textarea name="text" class="tweet-text"></textarea>
           <div id="tweet-button">
             <button type="submit">Tweet</button>
             <output name="counter" id="countainer2" class="counter" for="tweet-text">140</output>
@@ -74,5 +78,7 @@
       <section class="tweets">
       </section>
     </main>
+
   </body>
+
 </html>

@@ -83,18 +83,6 @@ body {
    width: 60%;
  }
 
-textarea {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  border: 0;
-  outline: 0;
-  background: transparent;
-  border-bottom: 3.5px solid black;
-  height: 40px;
-  width: 54%;
-  position: absolute;
-}
+
 
 }

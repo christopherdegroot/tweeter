@@ -1,9 +1,9 @@
 
-
+// Ensure entire script only executes AFTER the document is ready
 $(document).ready(function() {
 
   // grabbing text element
-  const $text = $('#tweet-text');
+  const $text = $('textarea');
 
   // setting up event listener to listen for input on text box
   $text.on('input', function() {

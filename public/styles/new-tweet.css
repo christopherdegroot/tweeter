@@ -1,7 +1,7 @@
 .new-tweet {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   width: 90%;
   margin-top: 2em;
@@ -10,7 +10,7 @@
 form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
   padding-bottom: 2em;
 }
@@ -26,31 +26,27 @@ button {
 
 output{
   display: flex;
-  
   align-items: center;
   margin-right: 0;
   padding-right: 0;
   font-family: 'Bungee', cursive;
 }
 
+
 textarea {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+  overflow: auto;
   border: 0;
   outline: 0;
   background: transparent;
   border-bottom: 3.5px solid black;
   height: 40px;
-  width: 81%;
-  position: absolute;
+  width: 100%;
+  resize: none;
 }
 
 #tweet-button {
   display: flex;
   flex-direction: row;
-  padding-top: 2em;
   align-items: center;
   justify-content: space-between;
 }
@@ -70,8 +66,6 @@ label {
   color: #545149;
 }
 
-
-
 .error {
   display: flex;
   justify-content: space-evenly;
@@ -84,7 +78,8 @@ label {
   border-radius: 5px;
   color: red;
   font-weight: 300;
-  padding: 20px 30px;
+  padding: 1em;
+  margin: 1em;
   height: 2.5em;
   width: auto;
 }
